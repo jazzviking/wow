@@ -14,13 +14,13 @@ toggleBtn.addEventListener('click', () => {
   showFortune();
 });
 
-async function showFortune() {
+async function showQuote() {
   main.innerHTML = ellipses;
 
-  let response = await fetch('http://zenquotes.io/api/random/');
+  let response = await fetch('http://zenquotes.io/api/quotes/');
   let fortune = await response.json();
 
   main.innerHTML = `<blockquote>"${fortune[0].q}"<blockquote><em class="author">&mdash; ${fortune[0].a}</em>`;
 }
 
-showFortune();
+showQuote();
