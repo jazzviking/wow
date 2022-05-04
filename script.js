@@ -17,7 +17,7 @@ toggleBtn.addEventListener('click', () => {
 async function showFortune() {
   main.innerHTML = ellipses;
 
-  let response = await fetch('https://zenquotes.io/api/random', {
+  let response = await fetch('https://zenquotes.io/api/random/', {
     mode: 'no-cors',
   });
   let fortune = await response.json();
