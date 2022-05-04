@@ -1,0 +1,117 @@
+/* linebreak BODY */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #26334f;
+  --shade1: #606c86;
+  --text-contrast: rgb(200, 178, 136);
+  --tint1: #192643;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-contrast);
+
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+}
+
+.toggle-loading {
+  border-style: none;
+  color: var(--bg-color);
+  background-color: var(--text-contrast);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  font-size: 1.5em;
+  margin: 4rem;
+  transition: 200ms;
+  letter-spacing: 3px;
+}
+
+.toggle-loading:hover,
+.toggle-loading:active {
+  background-color: var(--tint1);
+  color: #ddd;
+  box-shadow: 0 5px 1rem 0.25rem rgba(200, 178, 136, 0.05);
+}
+
+.container {
+  font-size: max(2rem, 3vw);
+  width: 90%;
+  text-align: center;
+}
+
+.author {
+  font-size: max(1.5rem, 2vw);
+}
+/* linebreak LOADING SPINNER */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--text-contrast);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+/* linebreak */
