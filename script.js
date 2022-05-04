@@ -23,7 +23,7 @@ async function showQuote() {
   let quote = await response.json();
 
   console.log(quote[0].video['1080p']);
-  main.innerHTML = `<video width="90%" controls><source src="${quote[0].video['1080p']}" type="video/mp4"></video>`;
+  main.innerHTML = `<video width="75%" controls><source src="${quote[0].video['1080p']}" type="video/mp4"></video>`;
 
   // main.innerHTML = `<blockquote>"${fortune[0].q}"<blockquote><em class="author">&mdash; ${fortune[0].a}</em>`;
 }
