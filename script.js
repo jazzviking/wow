@@ -11,16 +11,21 @@ const ellipses = `<div class="lds-ellipsis">
     </div>`;
 
 toggleBtn.addEventListener('click', () => {
-  showFortune();
+  showQuote();
 });
 
 async function showQuote() {
   main.innerHTML = ellipses;
 
-  let response = await fetch('https://zenquotes.io/api/quotes/');
-  let fortune = await response.json();
+  let response = await fetch(
+    'https://owen-wilson-wow-api.herokuapp.com/wows/random'
+  );
+  let quote = await response.json();
 
-  main.innerHTML = `<blockquote>"${fortune[0].q}"<blockquote><em class="author">&mdash; ${fortune[0].a}</em>`;
+  console.log(quote[0].video['1080p']);
+  main.innerHTML = `<video width="90%" controls><source src="${quote[0].video['1080p']}" type="video/mp4"></video>`;
+
+  // main.innerHTML = `<blockquote>"${fortune[0].q}"<blockquote><em class="author">&mdash; ${fortune[0].a}</em>`;
 }
 
 showQuote();
